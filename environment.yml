@@ -63,4 +63,4 @@ dependencies:
     - snuggs==1.4.7
     - typing-extensions==3.7.4.3
     - zipp==3.4.1
-prefix: /home/cayang/anaconda3/envs/pm25plot
+prefix: /path/to/anaconda3/envs/pm25plot
