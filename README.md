@@ -1,6 +1,10 @@
 # PM25_Hourly-Plot
-一個以python開發，使用matplotlib繪製中部/南部區域之calpuff模擬PM2.5逐時等濃度圖及觀測風速、混合層逐時圖。  
+一個以python開發，使用matplotlib繪製中部/南部區域之模擬PM2.5逐時等濃度圖及觀測風速、混合層逐時圖。  
+<div align="center">
+	<img src="https://github.com/cayangtuu/PM25_Hourly-Plot/blob/main/plot/%E6%8B%BC%E8%B2%BC0109.jpg" alt="Editor" width="500">
+</div>
 <br/>
+
 ### 所需工具
 Linux  
 [Anaconda3](https://www.anaconda.com/download/)
