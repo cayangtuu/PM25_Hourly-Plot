@@ -4,7 +4,9 @@ import pandas as pd
 import numpy as np
 import os 
 import matplotlib.patches as patches
+from matplotlib.font_manager import FontProperties
 
+zhfont = FontProperties(fname=os.getcwd()+'/Lib/wqy-microhei.ttc', size=18)
 
 class Vars():
      def __init__(self, Basic, powerPlant):
@@ -52,9 +54,15 @@ class Vars():
          #畫電廠位置
          if (self.powerPlant == "Taichung"):
            powerLon, powerLat = [120.479653038959, 24.2138311519342]
+           powerLabel = '台中電廠位置'
+           powerBTA = (7.8/20, 10/12.5)
          elif (self.powerPlant == "Hsinta"):
            powerLon, powerLat = [120.20173, 22.853955]
-         plt.plot(powerLon, powerLat, marker='X', color='k', markersize=10)
+           powerLabel = '興達電廠位置'
+           powerBTA = (7.8/20, 3/12.5)
+         plt.plot(powerLon, powerLat, marker='H', mfc='None', linestyle='None',\
+                  mec='k', mew=3, markersize=18, label=powerLabel)
+         plt.legend(bbox_to_anchor=powerBTA, prop=zhfont, frameon=False)
 
          #畫測站資料
          sitedf = pd.read_table(siteFil, sep='\s+')

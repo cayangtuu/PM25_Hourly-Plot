@@ -56,9 +56,15 @@ class Vars():
          #畫電廠位置
          if (self.powerPlant == "Taichung"):
            powerLon, powerLat = [120.479653038959, 24.2138311519342]
+           powerLabel = '台中電廠位置'
+           powerBTA = (8/20, 8.5/12.5)
          elif (self.powerPlant == "Hsinta"):
            powerLon, powerLat = [120.20173, 22.853955]
-         plt.plot(powerLon, powerLat, marker='X', color='k', markersize=10)
+           powerLabel = '興達電廠位置'
+           powerBTA = (8/20, 5/12.5)
+         plt.plot(powerLon, powerLat, marker='H', mfc='None', linestyle='None',\
+                  mec='k', mew=3, markersize=18, label=powerLabel)
+         plt.legend(bbox_to_anchor=powerBTA, prop=zhfont, frameon=False)
 
          #畫測站資料
          def sitelatlon(sitedf):
@@ -91,16 +97,13 @@ class Vars():
 
             # 畫出觀測值最大的位置
             stpm_imax = stpm.index(max(stpm))
-            plt.plot(stlon[stpm_imax], stlat[stpm_imax], marker='o', \
-                     color='gray', markeredgecolor='gray', markersize=18)
-            maxlg = mpl.lines.Line2D([], [], marker='o', color='gray', linestyle='None',\
-                             markersize=12, label='測站觀測最大值位置')
+            plt.plot(stlon[stpm_imax], stlat[stpm_imax], marker='o', linestyle='None',\
+                     mfc='None', mec='gray', mew=3, markersize=18, label='測站觀測最大值位置')
             if (self.powerPlant == "Taichung"):
-                plt.legend(handles=[maxlg], bbox_to_anchor=(10/20, 8.5/12.5), \
-                           prop=zhfont, frameon=False)
+                stBTA = (10.5/20, 8.5/12.5)
             elif (self.powerPlant == "Hsinta"):
-                plt.legend(handles=[maxlg], bbox_to_anchor=(10/20, 5/12.5), \
-                           prop=zhfont, frameon=False)
+                stBTA = (10.5/20, 5.5/12.5)
+            plt.legend(bbox_to_anchor=stBTA, prop=zhfont, frameon=False)
 
 
          for ii in range(0, len(stpm)):
